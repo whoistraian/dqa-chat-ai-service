@@ -12,5 +12,5 @@ class MeRouter:
 
         self.router.add_api_route("", self.get_me, methods=["GET"])
 
-    def get_me(self, current_authenticated_user: t.Annotated[MeResponseSchema, Depends(get_current_authenticated_user)]):
+    def get_me(self, current_authenticated_user: t.Annotated[MeResponseSchema, Depends(get_current_authenticated_user)]) -> MeResponseSchema:
         return current_authenticated_user

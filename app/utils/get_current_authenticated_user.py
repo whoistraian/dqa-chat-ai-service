@@ -5,7 +5,7 @@ from utils.engine import engine
 from services.session import SessionService
 
 
-def get_current_authenticated_user(token: t.Annotated[t.Optional[str], Cookie()]) -> MeResponseSchema:
+def get_current_authenticated_user(token: t.Annotated[t.Optional[str], Cookie()] = None) -> MeResponseSchema:
     session_service = SessionService()
 
     if not token or not session_service.get_session_by_token(token):

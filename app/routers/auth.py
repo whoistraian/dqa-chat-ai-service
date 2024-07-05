@@ -22,7 +22,8 @@ class AuthRouter:
             'token',
             result.token,
             secure=not bool(os.getenv('DEBUG')),
-            httponly=True
+            httponly=True,
+            samesite="strict"
         )
 
         return result

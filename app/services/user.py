@@ -39,6 +39,9 @@ class UserService:
         if not my_user and not safe:
             raise HTTPException(status_code=404, detail="User not found.")
 
+        if not my_user:
+            return None
+
         return UserResponseSchema.from_user(my_user)
 
     def create_user(self, user: User) -> UserResponseSchema:

@@ -1,7 +1,6 @@
 import os
 from dotenv import load_dotenv
-from fastapi import FastAPI, APIRouter
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi import FastAPI
 from sqlmodel import SQLModel
 from utils.engine import engine
 
@@ -21,23 +20,13 @@ load_dotenv()
 
 app = FastAPI()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[os.getenv("FRONTEND_URL")],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
 user_service = UserService()
 session_service = SessionService()
 auth_service = AuthService(user_service, session_service)
 
-api_router = APIRouter(prefix="/api")
-api_router.include_router(AuthRouter(auth_service).router)
-api_router.include_router(MeRouter().router)
+app.include_router(AuthRouter(auth_service).router)
+app.include_router(MeRouter().router)
 
-app.include_router(api_router)
 
 if __name__ == "main":
     SQLModel.metadata.create_all(engine)

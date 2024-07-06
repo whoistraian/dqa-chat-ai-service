@@ -19,10 +19,10 @@ class ChatService:
         self.embedding_function = OllamaEmbeddings(
             model=os.getenv('EMBEDDING_MODEL')
         )
-        self.vectorstore = Chroma.from_documents(
+        self.vectorstore: Chroma = Chroma.from_documents(
             *self.pdfs, self.embedding_function
         )
-        self.retriever = self.vectorstore.as_retriever()
+        self.retriever = self.vectorstore.as_retriever(search_kwargs={"k": 1})
         self.prompt = hub.pull(os.getenv('PROMPT'))
         self.llm = ChatOllama(model=os.getenv('CHAT_MODEL'), temperature=0)
         self.rag_chain = (

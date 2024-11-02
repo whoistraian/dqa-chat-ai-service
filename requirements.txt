@@ -72,7 +72,7 @@ opentelemetry-proto==1.25.0
 opentelemetry-sdk==1.25.0
 opentelemetry-semantic-conventions==0.46b0
 opentelemetry-util-http==0.46b0
-orjson==3.10.6
+orjson==3.10.11
 overrides==7.7.0
 packaging==24.1
 posthog==3.5.0

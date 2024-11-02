@@ -52,7 +52,7 @@ langserve==0.2.2
 langsmith==0.1.83
 markdown-it-py==3.0.0
 MarkupSafe==2.1.5
-marshmallow==3.21.3
+marshmallow==3.23.1
 mdurl==0.1.2
 mmh3==4.1.0
 monotonic==1.6

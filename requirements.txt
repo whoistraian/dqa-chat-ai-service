@@ -105,7 +105,7 @@ SQLAlchemy==2.0.31
 sqlmodel==0.0.19
 sse-starlette==1.8.2
 starlette==0.40.0
-sympy==1.12.1
+sympy==1.13.3
 tenacity==8.5.0
 tokenizers==0.19.1
 toml==0.10.2

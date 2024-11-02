@@ -79,7 +79,7 @@ posthog==3.5.0
 protobuf==4.25.3
 psycopg2-binary==2.9.9
 pyasn1==0.6.0
-pyasn1_modules==0.4.0
+pyasn1_modules==0.4.1
 pydantic==2.8.2
 pydantic_core==2.20.1
 Pygments==2.18.0

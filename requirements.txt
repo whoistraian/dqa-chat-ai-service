@@ -106,7 +106,7 @@ sqlmodel==0.0.19
 sse-starlette==1.8.2
 starlette==0.40.0
 sympy==1.12.1
-tenacity==8.5.0
+tenacity==9.0.0
 tokenizers==0.19.1
 toml==0.10.2
 tqdm==4.66.4
